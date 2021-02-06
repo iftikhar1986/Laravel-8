@@ -21,6 +21,8 @@ Laravel 8 Topics Covered
 
 10.Create Database & Configration
 
+11.
+
 
 
 
@@ -28,7 +30,36 @@ Laravel 8 Topics Covered
 UseFull Commends
 ----------------
 Creating Controller
+-------------------
 php artisan make:controller ContactController
 
 Creating Middleware
+-------------------
 php artisan make:middleware CheckAge
+
+Authentication install (JETSRTEAM)
+----------------------------------
+composer require laravel/jetstream
+
+php artisan jetstream:install livewire
+
+Change <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <script src="{{ mix('js/app.js') }}" defer></script>
+
+        into
+
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+Migration & Create a table in to database
+-----------------------------------------
+php artisan migrate
+
+npm install && npm run dev
+
+
+
+
+
+
