@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,9 @@ Route::get('/about', function () {
 Route::get('/contact', [ContactController::class, 'index'])->name('abc');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+
+
+    //Using Eloquent ORM Read Users Data
+    $users = User::all();
+    return view('dashboard',compact('users'));
 })->name('dashboard');
