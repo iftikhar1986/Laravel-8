@@ -25,6 +25,8 @@ Laravel 8 Topics Covered
 
 12.Authentication Details
 
+13.Eloquent ORM Read Users Data
+
 
 
 =====================================================
