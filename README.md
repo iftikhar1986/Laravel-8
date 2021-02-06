@@ -21,11 +21,13 @@ Laravel 8 Topics Covered
 
 10.Create Database & Configration
 
-11.
+11.Authentication install (JETSRTEAM)
+
+12.Authentication Details
 
 
 
-
+=====================================================
 
 UseFull Commends
 ----------------
@@ -41,15 +43,15 @@ Authentication install (JETSRTEAM)
 ----------------------------------
 composer require laravel/jetstream
 
-php artisan jetstream:install livewire
+php artisan jetstream:install livewire 
 
-Change <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <script src="{{ mix('js/app.js') }}" defer></script>
+if you got this error(The Mix manifest does not exist. (View: C:\xampp\htdocs\Laravel8\basic\resources\views\layouts\guest.blade.php) http://127.0.0.1:8000/register)
 
-        into
+Need to Update Latest Version of Node js
 
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="{{ asset('js/app.js') }}" defer></script>
+and run this command
+
+npm install webpack-laravel-mix-manifest --save-dev
 
 
 Migration & Create a table in to database
@@ -57,6 +59,7 @@ Migration & Create a table in to database
 php artisan migrate
 
 npm install && npm run dev
+
 
 
 

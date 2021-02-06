@@ -31,3 +31,7 @@ Route::get('/about', function () {
 
 //Using in Laraval 8
 Route::get('/contact', [ContactController::class, 'index'])->name('abc');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
