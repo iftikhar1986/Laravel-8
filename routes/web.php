@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CategoryController;
 use App\Models\User;  //Using Eloquent ORM Read Users Data
 use Illuminate\Support\Facades\DB;  //Query Builder Read Users Data
 
@@ -33,6 +34,9 @@ Route::get('/about', function () {
 
 //Using in Laraval 8
 Route::get('/contact', [ContactController::class, 'index'])->name('abc');
+
+//Category Controller
+Route::get('/category/all', [CategoryController::class, 'AllCat'])->name('all.category');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 

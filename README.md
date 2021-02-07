@@ -1,33 +1,35 @@
 Laravel 8 Topics Covered
 ------------------------
 
-1.Enviornment Setup
+1. Enviornment Setup
 
-2.Installation
+2. Installation
 
-3.Folder Structure
+3. Folder Structure
 
-4.MVC & its Benifites
+4. MVC & its Benifites
 
-5.Route
+5. Route
 
-6.Blade
+6. Blade
 
-7.Controller & GET Url Request
+7. Controller & GET Url Request
 
-8.Middleware
+8. Middleware
 
-9.Url to Route
+9. Url to Route
 
-10.Create Database & Configration
+10. Create Database & Configration
 
-11.Authentication install (JETSRTEAM)
+11. Authentication install (JETSRTEAM)
 
-12.Authentication Details
+12. Authentication Details
 
-13.Eloquent ORM Read Users Data
+13. Eloquent ORM Read Users Data
 
-14.Query Builder Read Users Data
+14. Query Builder Read Users Data
+
+15. Create Model And Migration
 
 
 
@@ -63,6 +65,11 @@ Migration & Create a table in to database
 php artisan migrate
 
 npm install && npm run dev
+
+Creating Model and migrate it
+-----------------------------
+php artisan make:model Category -m
+
 
 
 
