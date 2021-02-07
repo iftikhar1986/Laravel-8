@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Models\User;
+use App\Models\User;  //Using Eloquent ORM Read Users Data
+use Illuminate\Support\Facades\DB;  //Query Builder Read Users Data
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
     //Using Eloquent ORM Read Users Data
-    $users = User::all();
+   $users = User::all();
+
+
+   //Query Builder Read Users Data
+ //  $users = DB::table('users')->get();
+
     return view('dashboard',compact('users'));
 })->name('dashboard');

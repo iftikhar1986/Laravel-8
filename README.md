@@ -27,6 +27,8 @@ Laravel 8 Topics Covered
 
 13.Eloquent ORM Read Users Data
 
+14.Query Builder Read Users Data
+
 
 
 =====================================================
