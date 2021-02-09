@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+//use Illuminate\Support\Carbon\Carbon;
 
 class CategoryController extends Controller
 {
@@ -18,6 +19,10 @@ class CategoryController extends Controller
 
          //Eloquent ORM Read Data and add at first
          $categories = Category::latest()->get();
+
+
+        //Query Builder Read Data and add at first
+       // $categories = DB::table('categories')->latest()->get();
         
         return view('admin.category.index',compact('categories'));
      }

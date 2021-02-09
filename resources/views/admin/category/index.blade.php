@@ -47,7 +47,8 @@
                                                     @if($category->created_at == NULL)
                                                     <span class="text-danger">No Date Set</span>
                                                     @else
-                                                    {{ $category->created_at->diffForHumans() }}
+                                                   <!-- Using for Eloquent ORM Read Data  --> {{ $category->created_at->diffForHumans() }} 
+                                                   <!-- Query Builder Read Data   {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }} -->
                                                     @endif
                                                     </td> 
                                                 </tr>

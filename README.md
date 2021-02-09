@@ -39,6 +39,10 @@ Laravel 8 Topics Covered
 
 19. Eloquent ORM Read Data
 
+20. Query Builder Read Data
+
+
+
 
 =====================================================
 
