@@ -33,6 +33,8 @@ Laravel 8 Topics Covered
 
 16. Form Validation & Show Custom Error Message
 
+17. Eloquent ORM Insert Data
+
 
 
 =====================================================
