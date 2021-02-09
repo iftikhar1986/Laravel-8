@@ -31,6 +31,8 @@ Laravel 8 Topics Covered
 
 15. Create Model And Migration
 
+16. Form Validation & Show Custom Error Message
+
 
 
 =====================================================
