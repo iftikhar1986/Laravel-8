@@ -37,6 +37,8 @@ Laravel 8 Topics Covered
 
 18. Insert Data With Query Builder
 
+19. Eloquent ORM Read Data
+
 
 =====================================================
 
