@@ -18,11 +18,17 @@ class CategoryController extends Controller
         // $categories = Category::all();
 
          //Eloquent ORM Read Data and add at first
-         $categories = Category::latest()->get();
+        // $categories = Category::latest()->get();
+
+        //Using Pagniations
+        $categories = Category::latest()->paginate(5);
 
 
         //Query Builder Read Data and add at first
        // $categories = DB::table('categories')->latest()->get();
+
+       //Using Pagniations
+       // $categories = DB::table('categories')->latest()->paginate(5);
         
         return view('admin.category.index',compact('categories'));
      }

@@ -41,6 +41,10 @@ Laravel 8 Topics Covered
 
 20. Query Builder Read Data
 
+21. Laravel Pagination
+
+22. Eloquent ORM One To One Relationships
+
 
 
 
