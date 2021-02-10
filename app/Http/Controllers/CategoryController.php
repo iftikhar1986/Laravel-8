@@ -20,7 +20,7 @@ class CategoryController extends Controller
          //Eloquent ORM Read Data and add at first
         // $categories = Category::latest()->get();
 
-        //Using Pagniations
+        //Using Pagniations Eloquent ORM
         $categories = Category::latest()->paginate(5);
 
 
