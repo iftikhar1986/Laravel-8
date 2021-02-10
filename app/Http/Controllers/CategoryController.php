@@ -24,6 +24,14 @@ class CategoryController extends Controller
         $categories = Category::latest()->paginate(5);
 
 
+        //Query Builder Join Table 
+        // $categories = DB::table('categories')
+        // ->join('users','categories.user_id','users.id')
+        // ->select('categories.*','users.name')
+        // ->latest()->paginate(5);
+
+
+
         //Query Builder Read Data and add at first
        // $categories = DB::table('categories')->latest()->get();
 

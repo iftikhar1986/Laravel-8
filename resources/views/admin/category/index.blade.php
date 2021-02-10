@@ -44,6 +44,7 @@
                                                     
                                                     <td>{{ $category->category_name }}</td>
                                                     <td>{{ $category->user->name }}</td>
+                                                    <!-- if you are using Query Bilder we use or name instead of user->name -->
                                                     <td>
                                                     @if($category->created_at == NULL)
                                                     <span class="text-danger">No Date Set</span>

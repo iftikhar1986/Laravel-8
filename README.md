@@ -45,6 +45,8 @@ Laravel 8 Topics Covered
 
 22. Eloquent ORM One To One Relationships
 
+23. Query Builder Join Table
+
 
 
 

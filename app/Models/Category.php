@@ -17,7 +17,11 @@ class Category extends Model
        
     ];
 
+
+    //Equolent ORM One to One
     public function user(){
         return $this->hasOne(User::class, 'id', 'user_id'); 
     }
+
+
 }
