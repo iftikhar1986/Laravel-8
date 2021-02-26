@@ -40,6 +40,14 @@ Route::get('/category/all', [CategoryController::class, 'AllCat'])->name('all.ca
 
 Route::post('/category/add', [CategoryController::class, 'AddCat'])->name('store.category');
 
+//Edit Catagory Contoller 
+Route::get('category/edit/{id}', [CategoryController::class, 'Edit']);
+
+//Update Catagory Contoller 
+Route::post('category/update/{id}', [CategoryController::class, 'Update']);
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 

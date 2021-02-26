@@ -47,6 +47,8 @@ Laravel 8 Topics Covered
 
 23. Query Builder Join Table
 
+24. Eloquent ORM Edit & Update
+
 
 
 

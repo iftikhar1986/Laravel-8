@@ -85,4 +85,27 @@ class CategoryController extends Controller
 
             
      }
+
+
+     //Edit Method 
+     public function Edit($id){
+         //Equlent ORM
+         $categories = Category::find($id);
+         return view('admin.category.edit',compact('categories'));
+
+     }
+
+
+     //Update Method
+     public function Update(Request $request, $id){
+        $update = Category::find($id)->Update([
+
+            'category_name' => $request->category_name,
+            'user_id' => Auth::user()->id 
+
+        ]);
+
+        return Redirect()->route('all.category')->with('success','Category Updated Successfully');
+
+     }
 }
