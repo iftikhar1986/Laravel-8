@@ -22,6 +22,7 @@ class CategoryController extends Controller
 
         //Using Pagniations Eloquent ORM
         $categories = Category::latest()->paginate(5);
+        $trashCat = Category::onlyTrashed()->latest()->paginate(3);
 
 
         //Query Builder Join Table 
@@ -38,7 +39,7 @@ class CategoryController extends Controller
        //Using Pagniations
        // $categories = DB::table('categories')->latest()->paginate(5);
         
-        return view('admin.category.index',compact('categories'));
+        return view('admin.category.index',compact('categories','trashCat'));
      }
 
     public function AddCat(Request $request){
@@ -124,5 +125,25 @@ class CategoryController extends Controller
 
         return Redirect()->route('all.category')->with('success','Category Updated Successfully');
 
+     }
+
+
+     public function SoftDelete($id){
+         $delete = Category::find($id)->delete();
+
+         return Redirect()->back()->with('success','Category Deleted Successfully');
+     }
+
+     public function Restore($id){
+         $delete = Category::withTrashed()->find($id)->restore();
+         return Redirect()->back()->with('success','Category Restored Successfully');
+
+
+     }
+
+     public function Pdelete($id){
+         $delete = Category::onlyTrashed()->find($id)->forceDelete();
+         return Redirect()->back()->with('success','Category Parmenently Deleted');
+        
      }
 }

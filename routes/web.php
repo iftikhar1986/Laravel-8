@@ -46,6 +46,15 @@ Route::get('category/edit/{id}', [CategoryController::class, 'Edit']);
 //Update Catagory Contoller 
 Route::post('category/update/{id}', [CategoryController::class, 'Update']);
 
+//SoftDelete Catagory Contoller 
+Route::get('softdelete/category/{id}', [CategoryController::class, 'SoftDelete']);
+
+//Edit Catagory Contoller 
+Route::get('category/restore/{id}', [CategoryController::class, 'Restore']);
+
+
+//P Delete Catagory Contoller 
+Route::get('pdelete/category/{id}', [CategoryController::class, 'Pdelete']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

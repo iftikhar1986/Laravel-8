@@ -51,6 +51,10 @@ Laravel 8 Topics Covered
 
 25. Query Builder Edit & Update Data
 
+26. Soft Delete ,Data Restore & ForceDelete
+
+
+
 
 
 
