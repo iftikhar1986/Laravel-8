@@ -91,6 +91,11 @@ class CategoryController extends Controller
      public function Edit($id){
          //Equlent ORM
          $categories = Category::find($id);
+
+        /* //Query Builder Edit & Update Data
+         $categories = Db::table('categories')->where('id',$id)->first();*/
+
+
          return view('admin.category.edit',compact('categories'));
 
      }
@@ -98,12 +103,24 @@ class CategoryController extends Controller
 
      //Update Method
      public function Update(Request $request, $id){
+
+       //Equlent ORM
         $update = Category::find($id)->Update([
 
             'category_name' => $request->category_name,
             'user_id' => Auth::user()->id 
 
-        ]);
+        ]); 
+
+       /* //Query Builder Edit & Update Data
+
+        $data = array();
+        $data['category_name'] =  $request->category_name;
+        $data['user_id'] = Auth::user()->id;
+        DB::table('categories')->where('id',$id)->update($data);*/
+
+
+
 
         return Redirect()->route('all.category')->with('success','Category Updated Successfully');
 
