@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
 use App\Models\User;  //Using Eloquent ORM Read Users Data
 use Illuminate\Support\Facades\DB;  //Query Builder Read Users Data
 
@@ -55,6 +56,14 @@ Route::get('category/restore/{id}', [CategoryController::class, 'Restore']);
 
 //P Delete Catagory Contoller 
 Route::get('pdelete/category/{id}', [CategoryController::class, 'Pdelete']);
+
+
+
+
+
+/////////////////////////Brand Route///////////////////////////////////
+Route::get('/brand/all', [BrandController::class, 'AllBrand'])->name('all.brand');
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

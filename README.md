@@ -53,6 +53,8 @@ Laravel 8 Topics Covered
 
 26. Soft Delete ,Data Restore & ForceDelete
 
+27. Setup Brand Page
+
 
 
 
