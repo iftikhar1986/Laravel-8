@@ -44,14 +44,14 @@
                                                 <th scope="row">{{  $brands->firstItem()+$loop->index }}</th>
                                                     
                                                     <td>{{ $brand->brand_name }}</td>
-                                                    <td><img src="" alt=""></td>
+                                                    <td><img src="{{ asset($brand->brand_image)}}" style="height: 40px; width: 70px;"></td>
                                                     <!-- if you are using Query Bilder we use or name instead of user->name -->
                                                     <td>
                                                     @if($brand->created_at == NULL)
                                                     <span class="text-danger">No Date Set</span>
                                                     @else
                                                    <!-- Using for Eloquent ORM Read Data  --> {{ $brand->created_at->diffForHumans() }} 
-                                                   <!-- Query Builder Read Data   {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }} -->
+                                                 
                                                     @endif
                                                     </td> 
                                                     <td> 
@@ -77,12 +77,12 @@
                         
                         <div class="card-body">
                             
-                        <form action="{{ route('store.category')}}" method="POST">
+                        <form action="{{ route('store.brand')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Brand Name</label>
                                 
-                                <input type="text" name="brand_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category name">
+                                <input type="text" name="brand_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Brand name">
                        
                         @error('brand_name')        
                             <span class="text-danger">{{ $message }}</span>
@@ -92,9 +92,9 @@
 
 
                                 <div class="form-group">
-                                <label for="exampleInputEmail1">Brand Name</label>
+                                <label for="exampleInputEmail1">Brand Image</label>
                                 
-                                <input type="file" name="brand_image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category name">
+                                <input type="file" name="brand_image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter brand Image">
                        
                         @error('brand_image')        
                             <span class="text-danger">{{ $message }}</span>

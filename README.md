@@ -55,6 +55,8 @@ Laravel 8 Topics Covered
 
 27. Setup Brand Page
 
+28. Eloquent ORM Insert Image
+
 
 
 
