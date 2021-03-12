@@ -59,6 +59,8 @@ Laravel 8 Topics Covered
 
 29. Eloquent ORM Edit,Update Data With Image & Without Image
 
+30. Delete Data With Image
+
 
 
 
