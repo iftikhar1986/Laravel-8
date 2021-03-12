@@ -57,6 +57,7 @@ Laravel 8 Topics Covered
 
 28. Eloquent ORM Insert Image
 
+29. Eloquent ORM Edit,Update Data With Image & Without Image
 
 
 
