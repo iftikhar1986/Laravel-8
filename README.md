@@ -63,7 +63,7 @@ Laravel 8 Topics Covered
 
 31. Image Insert & Resize With Intervention Package
 
-32. 
+32. Multiple Image Upload
 
 
 

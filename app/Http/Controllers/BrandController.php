@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use App\Models\Multipic;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Redirect;
 use Image;
@@ -38,18 +39,18 @@ class BrandController extends Controller
         $brand_image = $request -> file('brand_image');
           
         //generta uniqu ID
-        // $name_gen = hexdec(uniqid());
-        // $img_ext = strtolower($brand_image->getClientOriginalExtension());
-        // $img_name = $name_gen.'.'.$img_ext;
-        // $up_location = 'image/brand/';
-        // $last_img =  $up_location.$img_name;
-        // $brand_image->move($up_location,$last_img);
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($brand_image->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $up_location = 'image/brand/';
+        $last_img =  $up_location.$img_name;
+        $brand_image->move($up_location,$last_img);
 
-        $name_gen = hexdec(uniqid()).'.'.$brand_image->getClientOriginalExtension();
+        // $name_gen = hexdec(uniqid()).'.'.$brand_image->getClientOriginalExtension();
 
-        // and you are ready to go ...
-        Image::make($brand_image)->resize(300, 200)->save('image/brand/'.$name_gen);
-        $last_img =  'image/brand/'. $name_gen;
+        // // and you are ready to go ...
+        // Image::make($brand_image)->resize(300, 200)->save('image/brand/'.$name_gen);
+        // $last_img =  'image/brand/'. $name_gen;
 
 
         Brand::insert([
@@ -129,4 +130,30 @@ class BrandController extends Controller
         return Redirect()->back()->with('success','Brand Deleted Successfully');
 
     }
+
+    //Multi image all methods 
+     public function multiPic(){
+
+            $images = Multipic::all();
+            return view ('admin.multipic.index',compact('images'));
+     }
+
+     //Store image
+     public function StoreImg(Request $request){
+// dd($request->all());
+        $images = $request->file('image');
+
+        foreach ($images as $image) {
+            
+            $multiPic = new Multipic();
+            $multiPic->image = $image->store('images','public');
+            $multiPic->save();
+        
+
+        }// End of the foreach loop
+        return Redirect()->back()->with('success','Brand Inserted Successfully');
+
+
+     } 
 }
+
